@@ -1,0 +1,380 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Page body styling */
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* Main, Header, Footer page styling */
+header,
+footer,
+main {
+    max-width: 100%;
+    /*16px * 36 = 576px*/
+    margin: 0 auto;
+    /* Center from left to right*/
+    padding: .5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-bottom: 0rem;
+}
+
+footer {
+    background-color: #ffffff;
+    color: black;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Fixed Navigation styling */
+.topnav {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    text-align: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.topnav a {
+    color: #000000;
+    text-align: center;
+    padding: 1rem 1.2rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #000000;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .topnav {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .topnav a {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width:700px) {
+
+    .about-me-home-sec,
+    .projects-home-sec,
+    .resume-home-sec {
+        flex-direction: column;
+    }
+
+    .about-me-home-sec div,
+    .projects-home-sec div,
+    .resume-home-sec div {
+        width: 100%;
+    }
+
+    .about-me-home-sec div button,
+    .projects-home-sec div button,
+    .resume-home-sec div button {
+        width: 100%;
+    }
+
+}
+
+/* Header img stylying */
+.header-img {
+    margin-top: 3.5rem;
+    width: 100%;
+}
+
+.header-img img {
+    width: 100%;
+}
+
+/* Main Home Styling */
+
+.home-grid {
+    margin-top: .5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+
+}
+
+.about-me-home-sec,
+.projects-home-sec,
+.resume-home-sec {
+    display: flex;
+    width: 100%;
+    text-align: left;
+    height: 52rem;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.projects-home-sec {
+    background-color: black;
+    color: white;
+    box-shadow: 1px 5px 20px black;
+}
+
+.projects-home-1 {
+    opacity: 1;
+}
+
+.projects-home-sec button {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    padding: 1rem;
+}
+
+.about-me-home-sec button,
+.resume-home-sec button {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/* About Page styling */
+
+.about-grid {
+    margin-top: .5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    text-align: center;
+
+}
+
+.quote-div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    height: 52rem;
+    font-style: italic;
+    box-shadow: 1px 5px 20px black;
+}
+
+.history-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    min-height: 52rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.goals-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    min-height: 52rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    font-style: italic;
+    box-shadow: 1px 5px 20px black;
+}
+
+.goals-div ul{
+    list-style-type: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.goals-div ul li{
+    text-align: left;
+}
+
+.goal-accomplished{
+    text-decoration: line-through;
+}
+
+.mindset-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    min-height: 52rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Resume page styling */
+
+.resume-page-grid{
+    margin-top: .5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    text-align: center;
+}
+
+.resume-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    min-height: 52rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.pdf-viewer{
+    width: 100%;
+}
+
+/* Projects page styling */
+
+.projects-page-grid{
+    margin-top: .5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    text-align: center;
+}
+
+/* Contact page styling */
+.contact-grid{
+    font-size: larger;
+    margin-top: .5rem;
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: 1fr;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+    margin-top: 5rem;
+    padding: 2rem;
+    background-color: black;
+    color: white;
+    height: 52rem;
+    font-style: italic;
+    box-shadow: 1px 5px 20px black;
+}
+
+.contact-form-div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 52rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
